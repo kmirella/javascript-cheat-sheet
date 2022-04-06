@@ -10,6 +10,12 @@ JavaScript variables:
     -const
     -let
 
+    SCOPES - determines the visibility of the variables
+        - block scope: let, const : the variables declared inside a {} block, cannot be accessed from outside the block // var can not have block scope
+        - local scope: variables declared inside a function, become local to the function. Function arguments (parameters) work as local variables inside functions.
+        - function scope: variables declared inside a function, are not visible from outside the function 
+        - global scope: a variable declared outside a function, becomes global - they are accessible from anywhere in the js 
+
 JavaScript data types:
     -Primitive values:
         - string
@@ -111,12 +117,15 @@ ARRAY METHODS
 
 ARRAY FUNCTIONS
 
-        -forEach(): //??????????????????????????????????????
+
+HIGHER ORDER FUNCTIONS: - mindegyikhez szükséges egy callback function
+
+        -forEach(): // olyan for ciklus, ami hof-ként előre meg van írva
 
         -map() : performs a function on each array element --> creates a new array
               pl.: 
                 const numbers1 = [45, 4, 9, 16, 25];
-                const numbers2 = numbers1.map(myFunction); // callback function
+                const numbers2 = numbers1.map(myFunction); // callback function: egy függvénynek átadunk egy függvényt argumentumként
 
                 function myFunction(value) {
                 return value * 2;
@@ -302,8 +311,26 @@ ARRAY FUNCTIONS
         }
         
     
-    SCOPES - determines the visibility of the variables
-        - block scope: let, const : the variables declared inside a {} block, cannot be accessed from outside the block // var can not have block scope
-        - local scope: variables declared inside a function, become local to the function. Function arguments (parameters) work as local variables inside functions.
-        - function scope: variables declared inside a function, are not visible from outside the function 
-        - global scope: a variable declared outside a function, becomes global - they are accessible from anywhere in the js 
+JAVASCRIPT THIS KEYWORD
+        -refers to an object - Which object depends on how this is being invoked (used or called).
+
+ARROW FUNCTIONS
+         hello = function() {
+            return "Hello World!";
+          }
+
+          --> 
+
+          hello = () => {
+            return "Hello World!";
+          }
+
+          If the function has only one statement, and the statement returns a value, you can remove the brackets and the return keyword:
+
+                hello = () => "Hello World!";
+
+          WITH PARAMETERS: hello = (val) => "Hello " + val;
+
+          If you have only one parameter, you can skip the parentheses as well:
+
+                hello = val => "Hello " + val;
